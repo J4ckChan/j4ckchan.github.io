@@ -77,7 +77,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="J4ckChan's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Gho5t's Blog" type="application/atom+xml" />
 
 
 
@@ -94,12 +94,12 @@
 写模块化的代码一个模块应该像一个电路芯片，它有定义良好的输入和输出。实际上一种很好的模块化方法早已经存在，它的名字叫做“函数”。每一个函数都有明确的输入（参数）和输出（返回值），同一个文件里">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" 读《编程的智慧》的笔记">
-<meta property="og:url" content="http://j4ckchan.com/2017/05/23/读《编程的智慧》的笔记/index.html">
-<meta property="og:site_name" content="J4ckChan's Blog">
+<meta property="og:url" content="https://j4ckchan.github.io/2017/05/23/读《编程的智慧》的笔记/index.html">
+<meta property="og:site_name" content="Gho5t's Blog">
 <meta property="og:description" content="反复推敲代码提高编程水平最有效的办法是什么？我想了很久，终于发现最有效的办法，其实是反反复复地修改和推敲代码。
 写优雅的代码 优雅的代码的另一个特征是，它的逻辑大体上看起来，是枝丫分明的树状结构（tree）。
 写模块化的代码一个模块应该像一个电路芯片，它有定义良好的输入和输出。实际上一种很好的模块化方法早已经存在，它的名字叫做“函数”。每一个函数都有明确的输入（参数）和输出（返回值），同一个文件里">
-<meta property="og:updated_time" content="2017-05-22T16:51:12.000Z">
+<meta property="og:updated_time" content="2018-04-01T16:18:11.985Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" 读《编程的智慧》的笔记">
 <meta name="twitter:description" content="反复推敲代码提高编程水平最有效的办法是什么？我想了很久，终于发现最有效的办法，其实是反反复复地修改和推敲代码。
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://j4ckchan.com/2017/05/23/读《编程的智慧》的笔记/"/>
+  <link rel="canonical" href="https://j4ckchan.github.io/2017/05/23/读《编程的智慧》的笔记/"/>
 
 
 
 
 
-  <title>  读《编程的智慧》的笔记 | J4ckChan's Blog </title>
+  <title>  读《编程的智慧》的笔记 | Gho5t's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -174,7 +174,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">J4ckChan's Blog</span>
+        <span class="site-title">Gho5t's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -291,7 +291,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://j4ckchan.com/2017/05/23/读《编程的智慧》的笔记/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2017/05/23/读《编程的智慧》的笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -300,7 +300,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="J4ckChan's Blog">
+      <meta itemprop="name" content="Gho5t's Blog">
     </span>
 
     
@@ -380,63 +380,18 @@
 <ul>
 <li>避免写太长的函数；</li>
 <li>制造小的工具函数；</li>
-<li>每个函数只做一件简单的事情；<br>举个🌰：比如某些人喜欢写“通用”函数：</li>
+<li>每个函数只做一件简单的事情；<br>举个🌰：比如某些人喜欢写“通用”函数：  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line"> <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">    a();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    b();</div><div class="line">  &#125;</div><div class="line">  c();</div><div class="line">  <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">    d();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    e();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<pre><code>void foo() {
- if (getOS().equals(&quot;MacOS&quot;)) {
-    a();
-  } else {
-    b();
-  }
-  c();
-  if (getOS().equals(&quot;MacOS&quot;)) {
-    d();
-  } else {
-    e();
-  }
-}
-</code></pre><p>这种“复用”其实是有害的。如果一个函数可能做两种事情，它们之间共同点少于它们的不同点，那你最好就写两个不同的函数，否则这个函数的逻辑就不会很清晰，容易出现错误。其实，上面这个函数可以改写成两个函数：</p>
-<pre><code>void fooMacOS() {
-  a();
-  c();
-  d();
-}
-</code></pre><p>和</p>
-<pre><code>void fooOther() {
-  b();
-  c();
-  e();
-}
-</code></pre><p>如果你发现两件事情大部分内容相同，只有少数不同，多半时候你可以把相同的部分提取出去，做成一个辅助函数。比如，如果你有个函数是这样：</p>
-<pre><code>void foo() {
-  a();
-  b()
-  c();
-  if (getOS().equals(&quot;MacOS&quot;)) {
-d();
-  } else {
-e();
-  }
-}
-</code></pre><p>其中a()，b()，c()都是一样的，只有d()和e()根据系统有所不同。那么你可以把a()，b()，c()提取出去：</p>
-<pre><code>void preFoo() {
-  a();
-  b()
-  c();
-</code></pre><p>然后制造两个函数：</p>
-<pre><code>void fooMacOS() {
-  preFoo();
-  d();
-}
-</code></pre><p>和</p>
-<pre><code>void fooOther() {
-  preFoo();
-  e();
-}
-</code></pre><ul>
-<li>避免使用全局变量和类成员来传递信息，尽量是用局部变量和参数；</li>
+<p>这种“复用”其实是有害的。如果一个函数可能做两种事情，它们之间共同点少于它们的不同点，那你最好就写两个不同的函数，否则这个函数的逻辑就不会很清晰，容易出现错误。其实，上面这个函数可以改写成两个函数：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooMacOS</span><span class="params">()</span> </span>&#123;</div><div class="line">  a();</div><div class="line">  c();</div><div class="line">  d();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooOther</span><span class="params">()</span> </span>&#123;</div><div class="line">  b();</div><div class="line">  c();</div><div class="line">  e();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你发现两件事情大部分内容相同，只有少数不同，多半时候你可以把相同的部分提取出去，做成一个辅助函数。比如，如果你有个函数是这样：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line">  a();</div><div class="line">  b()</div><div class="line">  c();</div><div class="line">  <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">d();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">e();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中a()，b()，c()都是一样的，只有d()和e()根据系统有所不同。那么你可以把a()，b()，c()提取出去：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">preFoo</span><span class="params">()</span> </span>&#123;</div><div class="line"> a();</div><div class="line"> b()</div><div class="line"> c();</div></pre></td></tr></table></figure></p>
+<p>然后制造两个函数：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooMacOS</span><span class="params">()</span> </span>&#123;</div><div class="line">  preFoo();</div><div class="line">  d();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooOther</span><span class="params">()</span> </span>&#123;</div><div class="line">  preFoo();</div><div class="line">  e();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>避免使用全局变量和类成员来传递信息，尽量是用局部变量和参数；<h2 id="写可读的代码"><a href="#写可读的代码" class="headerlink" title="写可读的代码"></a>写可读的代码</h2>注释不但没能让代码变得可读，反而由于大量的注释充斥在代码中间，让程序变得障眼难读。而且代码的逻辑一旦修改，就会有很多的注释变得过时，需要更新。修改注释是相当大的负担，所以大量的注释，反而成为了妨碍改进代码的绊脚石。<strong>实际上，真正优雅可读的代码，是几乎不需要注释的。</strong><br>如果没能合理利用程序语言提供的优势，你会发现程序还是很难懂，以至于需要写注释。所以我现在告诉你一些要点，也许可以帮助你大大减少写注释的必要：</li>
 </ul>
-<h2 id="写可读的代码"><a href="#写可读的代码" class="headerlink" title="写可读的代码"></a>写可读的代码</h2><p>注释不但没能让代码变得可读，反而由于大量的注释充斥在代码中间，让程序变得障眼难读。而且代码的逻辑一旦修改，就会有很多的注释变得过时，需要更新。修改注释是相当大的负担，所以大量的注释，反而成为了妨碍改进代码的绊脚石。<strong>实际上，真正优雅可读的代码，是几乎不需要注释的。</strong><br>如果没能合理利用程序语言提供的优势，你会发现程序还是很难懂，以至于需要写注释。所以我现在告诉你一些要点，也许可以帮助你大大减少写注释的必要：</p>
 <ol>
 <li>使用有意义的函数和变量名字；</li>
 <li>局部变量应该尽量接近使用它的地方；</li>
@@ -444,26 +399,13 @@ e();
 <li>不要重用局部变量；</li>
 <li>把复杂的逻辑提取出去，做成“帮助函数”；</li>
 <li>把复杂的表达式提取出去，做成中间变量；</li>
-<li>在合理的地方换行；<br>举个🌰：</li>
+<li>在合理的地方换行；<br>举个🌰： <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (someLongCondition1() &amp;&amp; someLongCondition2() &amp;&amp; someLongCondition3() &amp;&amp;</div><div class="line"> someLongCondition4()) &#123;</div><div class="line">   ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<pre><code>if (someLongCondition1() &amp;&amp; someLongCondition2() &amp;&amp; someLongCondition3() &amp;&amp;
- someLongCondition4()) {
-   ...
-}
-</code></pre><p>这样形式的表达，更方便别人理解代码的逻辑：</p>
-<pre><code>if (someLongCondition1() &amp;&amp;
-    someLongCondition2() &amp;&amp;
-   someLongCondition3() &amp;&amp;
-   someLongCondition4()) {
-   ...
-}
-</code></pre><p>再举个🌰：</p>
-<pre><code>log.info(&quot;failed to find file {} for command {}, with exception {}&quot;, file, command,
- exception);
-</code></pre><p>file，command和exception本来是同一类东西，却有两个留在了第一行，最后一个被折到第二行。它就不如手动换行成这个样子：</p>
-<pre><code>log.info(&quot;failed to find file {} for command {}, with exception {}&quot;,
- file, command, exception);
-</code></pre><h2 id="写简单的代码"><a href="#写简单的代码" class="headerlink" title="写简单的代码"></a>写简单的代码</h2><p>现在针对一些有问题的语言特性，我介绍一些我自己使用的代码规范，并且讲解一下为什么它们能让代码更简单。</p>
+<p>这样形式的表达，更方便别人理解代码的逻辑：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (someLongCondition1() &amp;&amp;</div><div class="line">    someLongCondition2() &amp;&amp;</div><div class="line">   someLongCondition3() &amp;&amp;</div><div class="line">   someLongCondition4()) &#123;</div><div class="line">   ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再举个🌰：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">log</span>.info(<span class="string">"failed to find file &#123;&#125; for command &#123;&#125;, with exception &#123;&#125;"</span>, file, command,</div><div class="line">exception);</div></pre></td></tr></table></figure></p>
+<p>file，command和exception本来是同一类东西，却有两个留在了第一行，最后一个被折到第二行。它就不如手动换行成这个样子：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">log</span>.info(<span class="string">"failed to find file &#123;&#125; for command &#123;&#125;, with exception &#123;&#125;"</span>,</div><div class="line">file, command, exception);</div></pre></td></tr></table></figure></p>
+<h2 id="写简单的代码"><a href="#写简单的代码" class="headerlink" title="写简单的代码"></a>写简单的代码</h2><p>现在针对一些有问题的语言特性，我介绍一些我自己使用的代码规范，并且讲解一下为什么它们能让代码更简单。</p>
 <ul>
 <li>避免使用自增减表达式（i++，++i，i–，–i）；</li>
 <li>永远不要省略花括号；</li>
@@ -476,44 +418,13 @@ e();
 </ol>
 </li>
 </ul>
-<h2 id="写直观的代码"><a href="#写直观的代码" class="headerlink" title="写直观的代码"></a>写直观的代码</h2><p>我写代码有一条重要的原则：<strong>如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它</strong>。</p>
-<pre><code>if (action1() || action2() &amp;&amp; action3()) {
-  ...
-}
-</code></pre><p>＝》</p>
-<pre><code>if (!action1()) {
-  if (action2()) {
-    action3();
-  }
-}
-</code></pre><h2 id="写无懈可击的代码"><a href="#写无懈可击的代码" class="headerlink" title="写无懈可击的代码"></a>写无懈可击的代码</h2><pre><code>if (...) {
-  if (...) {
-...
-return false;
-  } else {
-return true;
-  }
-} else if (...) {
-  ...
-  return false;
-} else {
-  return true;
-}
+<h2 id="写直观的代码"><a href="#写直观的代码" class="headerlink" title="写直观的代码"></a>写直观的代码</h2><p>我写代码有一条重要的原则：<strong>如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它</strong>。<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (action1() || action2() &amp;&amp; action3()) &#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>＝》<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (!action1()) &#123;</div><div class="line">  <span class="keyword">if</span> (action2()) &#123;</div><div class="line">    action3();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="写无懈可击的代码"><a href="#写无懈可击的代码" class="headerlink" title="写无懈可击的代码"></a>写无懈可击的代码</h2><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (...) &#123;</div><div class="line">  <span class="keyword">if</span> (...) &#123;</div><div class="line">...</div><div class="line"><span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (...) &#123;</div><div class="line">  ...</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p><strong>使用这种方式，其实是为了无懈可击的处理所有可能出现的情况，避免漏掉corner case。</strong>每个if语句都有两个分支的理由是：如果if的条件成立，你做某件事情；但是如果if的条件不成立，你应该知道要做什么另外的事情。不管你的if有没有else，你终究是逃不掉，必须得思考这个问题的。</p>
-<h2 id="正确处理错误"><a href="#正确处理错误" class="headerlink" title="正确处理错误"></a>正确处理错误</h2><p><code>try { ... } catch</code>里面，应该包含尽量少的代码。比如，如果foo和bar都可能产生异常A，你的代码应该尽可能写成：</p>
-<pre><code>try {
-  foo();
-} catch (A e) {...}
-
-try {
-  bar();
-} catch (A e) {...}
-</code></pre><p>＝》</p>
-<pre><code>try {
-  foo();
-  bar();
-} catch (A e) {...}
-</code></pre><h2 id="正确处理null指针"><a href="#正确处理null指针" class="headerlink" title="正确处理null指针"></a>正确处理null指针</h2><p>这些语言的类型系统允许null出现在任何对象（指针）类型可以出现的地方，然而null其实根本不是一个合法的对象。它不是一个String，不是一个Integer，也不是一个自定义的类。null的类型本来应该是NULL，也就是null自己。根据这个基本观点，我们推导出以下原则：</p>
+<h2 id="正确处理错误"><a href="#正确处理错误" class="headerlink" title="正确处理错误"></a>正确处理错误</h2><p><code>try { ... } catch</code>里面，应该包含尽量少的代码。比如，如果foo和bar都可能产生异常A，你的代码应该尽可能写成：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;</div><div class="line">  foo();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  bar();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div></pre></td></tr></table></figure></p>
+<p>＝》<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;</div><div class="line">  foo();</div><div class="line">  bar();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="正确处理null指针"><a href="#正确处理null指针" class="headerlink" title="正确处理null指针"></a>正确处理null指针</h2><p>这些语言的类型系统允许null出现在任何对象（指针）类型可以出现的地方，然而null其实根本不是一个合法的对象。它不是一个String，不是一个Integer，也不是一个自定义的类。null的类型本来应该是NULL，也就是null自己。根据这个基本观点，我们推导出以下原则：</p>
 <ul>
 <li>尽量不要产生null指针；</li>
 <li>不要catch NullPointerException；</li>

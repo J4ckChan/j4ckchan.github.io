@@ -77,7 +77,7 @@
 
 
 
-  <link rel="alternate" href="/atom.xml" title="J4ckChan's Blog" type="application/atom+xml" />
+  <link rel="alternate" href="/atom.xml" title="Gho5t's Blog" type="application/atom+xml" />
 
 
 
@@ -91,12 +91,12 @@
 
 <meta name="description" content="Keeping Moving, Don&apos;t settle!">
 <meta property="og:type" content="website">
-<meta property="og:title" content="J4ckChan's Blog">
-<meta property="og:url" content="http://j4ckchan.com/index.html">
-<meta property="og:site_name" content="J4ckChan's Blog">
+<meta property="og:title" content="Gho5t's Blog">
+<meta property="og:url" content="https://j4ckchan.github.io/index.html">
+<meta property="og:site_name" content="Gho5t's Blog">
 <meta property="og:description" content="Keeping Moving, Don&apos;t settle!">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="J4ckChan's Blog">
+<meta name="twitter:title" content="Gho5t's Blog">
 <meta name="twitter:description" content="Keeping Moving, Don&apos;t settle!">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://j4ckchan.com/"/>
+  <link rel="canonical" href="https://j4ckchan.github.io/"/>
 
 
 
 
 
-  <title> J4ckChan's Blog </title>
+  <title> Gho5t's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -169,7 +169,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">J4ckChan's Blog</span>
+        <span class="site-title">Gho5t's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -286,7 +286,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://j4ckchan.com/2018/04/01/关于RunLoop的笔记/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2018/04/01/关于RunLoop的笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -295,7 +295,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="J4ckChan's Blog">
+      <meta itemprop="name" content="Gho5t's Blog">
     </span>
 
     
@@ -457,7 +457,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://j4ckchan.com/2017/05/23/读《编程的智慧》的笔记/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2017/05/23/读《编程的智慧》的笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -466,7 +466,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="J4ckChan's Blog">
+      <meta itemprop="name" content="Gho5t's Blog">
     </span>
 
     
@@ -551,63 +551,18 @@
 <ul>
 <li>避免写太长的函数；</li>
 <li>制造小的工具函数；</li>
-<li>每个函数只做一件简单的事情；<br>举个🌰：比如某些人喜欢写“通用”函数：</li>
+<li>每个函数只做一件简单的事情；<br>举个🌰：比如某些人喜欢写“通用”函数：  <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line"> <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">    a();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    b();</div><div class="line">  &#125;</div><div class="line">  c();</div><div class="line">  <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">    d();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    e();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ul>
-<pre><code>void foo() {
- if (getOS().equals(&quot;MacOS&quot;)) {
-    a();
-  } else {
-    b();
-  }
-  c();
-  if (getOS().equals(&quot;MacOS&quot;)) {
-    d();
-  } else {
-    e();
-  }
-}
-</code></pre><p>这种“复用”其实是有害的。如果一个函数可能做两种事情，它们之间共同点少于它们的不同点，那你最好就写两个不同的函数，否则这个函数的逻辑就不会很清晰，容易出现错误。其实，上面这个函数可以改写成两个函数：</p>
-<pre><code>void fooMacOS() {
-  a();
-  c();
-  d();
-}
-</code></pre><p>和</p>
-<pre><code>void fooOther() {
-  b();
-  c();
-  e();
-}
-</code></pre><p>如果你发现两件事情大部分内容相同，只有少数不同，多半时候你可以把相同的部分提取出去，做成一个辅助函数。比如，如果你有个函数是这样：</p>
-<pre><code>void foo() {
-  a();
-  b()
-  c();
-  if (getOS().equals(&quot;MacOS&quot;)) {
-d();
-  } else {
-e();
-  }
-}
-</code></pre><p>其中a()，b()，c()都是一样的，只有d()和e()根据系统有所不同。那么你可以把a()，b()，c()提取出去：</p>
-<pre><code>void preFoo() {
-  a();
-  b()
-  c();
-</code></pre><p>然后制造两个函数：</p>
-<pre><code>void fooMacOS() {
-  preFoo();
-  d();
-}
-</code></pre><p>和</p>
-<pre><code>void fooOther() {
-  preFoo();
-  e();
-}
-</code></pre><ul>
-<li>避免使用全局变量和类成员来传递信息，尽量是用局部变量和参数；</li>
+<p>这种“复用”其实是有害的。如果一个函数可能做两种事情，它们之间共同点少于它们的不同点，那你最好就写两个不同的函数，否则这个函数的逻辑就不会很清晰，容易出现错误。其实，上面这个函数可以改写成两个函数：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooMacOS</span><span class="params">()</span> </span>&#123;</div><div class="line">  a();</div><div class="line">  c();</div><div class="line">  d();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooOther</span><span class="params">()</span> </span>&#123;</div><div class="line">  b();</div><div class="line">  c();</div><div class="line">  e();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>如果你发现两件事情大部分内容相同，只有少数不同，多半时候你可以把相同的部分提取出去，做成一个辅助函数。比如，如果你有个函数是这样：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span> </span>&#123;</div><div class="line">  a();</div><div class="line">  b()</div><div class="line">  c();</div><div class="line">  <span class="keyword">if</span> (getOS().equals(<span class="string">"MacOS"</span>)) &#123;</div><div class="line">d();</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">e();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中a()，b()，c()都是一样的，只有d()和e()根据系统有所不同。那么你可以把a()，b()，c()提取出去：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">preFoo</span><span class="params">()</span> </span>&#123;</div><div class="line"> a();</div><div class="line"> b()</div><div class="line"> c();</div></pre></td></tr></table></figure></p>
+<p>然后制造两个函数：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooMacOS</span><span class="params">()</span> </span>&#123;</div><div class="line">  preFoo();</div><div class="line">  d();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>和<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">fooOther</span><span class="params">()</span> </span>&#123;</div><div class="line">  preFoo();</div><div class="line">  e();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<ul>
+<li>避免使用全局变量和类成员来传递信息，尽量是用局部变量和参数；<h2 id="写可读的代码"><a href="#写可读的代码" class="headerlink" title="写可读的代码"></a>写可读的代码</h2>注释不但没能让代码变得可读，反而由于大量的注释充斥在代码中间，让程序变得障眼难读。而且代码的逻辑一旦修改，就会有很多的注释变得过时，需要更新。修改注释是相当大的负担，所以大量的注释，反而成为了妨碍改进代码的绊脚石。<strong>实际上，真正优雅可读的代码，是几乎不需要注释的。</strong><br>如果没能合理利用程序语言提供的优势，你会发现程序还是很难懂，以至于需要写注释。所以我现在告诉你一些要点，也许可以帮助你大大减少写注释的必要：</li>
 </ul>
-<h2 id="写可读的代码"><a href="#写可读的代码" class="headerlink" title="写可读的代码"></a>写可读的代码</h2><p>注释不但没能让代码变得可读，反而由于大量的注释充斥在代码中间，让程序变得障眼难读。而且代码的逻辑一旦修改，就会有很多的注释变得过时，需要更新。修改注释是相当大的负担，所以大量的注释，反而成为了妨碍改进代码的绊脚石。<strong>实际上，真正优雅可读的代码，是几乎不需要注释的。</strong><br>如果没能合理利用程序语言提供的优势，你会发现程序还是很难懂，以至于需要写注释。所以我现在告诉你一些要点，也许可以帮助你大大减少写注释的必要：</p>
 <ol>
 <li>使用有意义的函数和变量名字；</li>
 <li>局部变量应该尽量接近使用它的地方；</li>
@@ -615,26 +570,13 @@ e();
 <li>不要重用局部变量；</li>
 <li>把复杂的逻辑提取出去，做成“帮助函数”；</li>
 <li>把复杂的表达式提取出去，做成中间变量；</li>
-<li>在合理的地方换行；<br>举个🌰：</li>
+<li>在合理的地方换行；<br>举个🌰： <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (someLongCondition1() &amp;&amp; someLongCondition2() &amp;&amp; someLongCondition3() &amp;&amp;</div><div class="line"> someLongCondition4()) &#123;</div><div class="line">   ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<pre><code>if (someLongCondition1() &amp;&amp; someLongCondition2() &amp;&amp; someLongCondition3() &amp;&amp;
- someLongCondition4()) {
-   ...
-}
-</code></pre><p>这样形式的表达，更方便别人理解代码的逻辑：</p>
-<pre><code>if (someLongCondition1() &amp;&amp;
-    someLongCondition2() &amp;&amp;
-   someLongCondition3() &amp;&amp;
-   someLongCondition4()) {
-   ...
-}
-</code></pre><p>再举个🌰：</p>
-<pre><code>log.info(&quot;failed to find file {} for command {}, with exception {}&quot;, file, command,
- exception);
-</code></pre><p>file，command和exception本来是同一类东西，却有两个留在了第一行，最后一个被折到第二行。它就不如手动换行成这个样子：</p>
-<pre><code>log.info(&quot;failed to find file {} for command {}, with exception {}&quot;,
- file, command, exception);
-</code></pre><h2 id="写简单的代码"><a href="#写简单的代码" class="headerlink" title="写简单的代码"></a>写简单的代码</h2><p>现在针对一些有问题的语言特性，我介绍一些我自己使用的代码规范，并且讲解一下为什么它们能让代码更简单。</p>
+<p>这样形式的表达，更方便别人理解代码的逻辑：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (someLongCondition1() &amp;&amp;</div><div class="line">    someLongCondition2() &amp;&amp;</div><div class="line">   someLongCondition3() &amp;&amp;</div><div class="line">   someLongCondition4()) &#123;</div><div class="line">   ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>再举个🌰：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">log</span>.info(<span class="string">"failed to find file &#123;&#125; for command &#123;&#125;, with exception &#123;&#125;"</span>, file, command,</div><div class="line">exception);</div></pre></td></tr></table></figure></p>
+<p>file，command和exception本来是同一类东西，却有两个留在了第一行，最后一个被折到第二行。它就不如手动换行成这个样子：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">log</span>.info(<span class="string">"failed to find file &#123;&#125; for command &#123;&#125;, with exception &#123;&#125;"</span>,</div><div class="line">file, command, exception);</div></pre></td></tr></table></figure></p>
+<h2 id="写简单的代码"><a href="#写简单的代码" class="headerlink" title="写简单的代码"></a>写简单的代码</h2><p>现在针对一些有问题的语言特性，我介绍一些我自己使用的代码规范，并且讲解一下为什么它们能让代码更简单。</p>
 <ul>
 <li>避免使用自增减表达式（i++，++i，i–，–i）；</li>
 <li>永远不要省略花括号；</li>
@@ -647,44 +589,13 @@ e();
 </ol>
 </li>
 </ul>
-<h2 id="写直观的代码"><a href="#写直观的代码" class="headerlink" title="写直观的代码"></a>写直观的代码</h2><p>我写代码有一条重要的原则：<strong>如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它</strong>。</p>
-<pre><code>if (action1() || action2() &amp;&amp; action3()) {
-  ...
-}
-</code></pre><p>＝》</p>
-<pre><code>if (!action1()) {
-  if (action2()) {
-    action3();
-  }
-}
-</code></pre><h2 id="写无懈可击的代码"><a href="#写无懈可击的代码" class="headerlink" title="写无懈可击的代码"></a>写无懈可击的代码</h2><pre><code>if (...) {
-  if (...) {
-...
-return false;
-  } else {
-return true;
-  }
-} else if (...) {
-  ...
-  return false;
-} else {
-  return true;
-}
+<h2 id="写直观的代码"><a href="#写直观的代码" class="headerlink" title="写直观的代码"></a>写直观的代码</h2><p>我写代码有一条重要的原则：<strong>如果有更加直接，更加清晰的写法，就选择它，即使它看起来更长，更笨，也一样选择它</strong>。<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (action1() || action2() &amp;&amp; action3()) &#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>＝》<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">if</span> (!action1()) &#123;</div><div class="line">  <span class="keyword">if</span> (action2()) &#123;</div><div class="line">    action3();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="写无懈可击的代码"><a href="#写无懈可击的代码" class="headerlink" title="写无懈可击的代码"></a>写无懈可击的代码</h2><pre><code><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (...) &#123;</div><div class="line">  <span class="keyword">if</span> (...) &#123;</div><div class="line">...</div><div class="line"><span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (...) &#123;</div><div class="line">  ...</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </code></pre><p><strong>使用这种方式，其实是为了无懈可击的处理所有可能出现的情况，避免漏掉corner case。</strong>每个if语句都有两个分支的理由是：如果if的条件成立，你做某件事情；但是如果if的条件不成立，你应该知道要做什么另外的事情。不管你的if有没有else，你终究是逃不掉，必须得思考这个问题的。</p>
-<h2 id="正确处理错误"><a href="#正确处理错误" class="headerlink" title="正确处理错误"></a>正确处理错误</h2><p><code>try { ... } catch</code>里面，应该包含尽量少的代码。比如，如果foo和bar都可能产生异常A，你的代码应该尽可能写成：</p>
-<pre><code>try {
-  foo();
-} catch (A e) {...}
-
-try {
-  bar();
-} catch (A e) {...}
-</code></pre><p>＝》</p>
-<pre><code>try {
-  foo();
-  bar();
-} catch (A e) {...}
-</code></pre><h2 id="正确处理null指针"><a href="#正确处理null指针" class="headerlink" title="正确处理null指针"></a>正确处理null指针</h2><p>这些语言的类型系统允许null出现在任何对象（指针）类型可以出现的地方，然而null其实根本不是一个合法的对象。它不是一个String，不是一个Integer，也不是一个自定义的类。null的类型本来应该是NULL，也就是null自己。根据这个基本观点，我们推导出以下原则：</p>
+<h2 id="正确处理错误"><a href="#正确处理错误" class="headerlink" title="正确处理错误"></a>正确处理错误</h2><p><code>try { ... } catch</code>里面，应该包含尽量少的代码。比如，如果foo和bar都可能产生异常A，你的代码应该尽可能写成：<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;</div><div class="line">  foo();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">  bar();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div></pre></td></tr></table></figure></p>
+<p>＝》<br>    <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">try</span> &#123;</div><div class="line">  foo();</div><div class="line">  bar();</div><div class="line">&#125; <span class="keyword">catch</span> (A e) &#123;...&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="正确处理null指针"><a href="#正确处理null指针" class="headerlink" title="正确处理null指针"></a>正确处理null指针</h2><p>这些语言的类型系统允许null出现在任何对象（指针）类型可以出现的地方，然而null其实根本不是一个合法的对象。它不是一个String，不是一个Integer，也不是一个自定义的类。null的类型本来应该是NULL，也就是null自己。根据这个基本观点，我们推导出以下原则：</p>
 <ul>
 <li>尽量不要产生null指针；</li>
 <li>不要catch NullPointerException；</li>
@@ -742,7 +653,7 @@ try {
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://j4ckchan.com/2017/05/14/NSDate/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2017/05/14/NSDate/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -751,7 +662,7 @@ try {
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="J4ckChan's Blog">
+      <meta itemprop="name" content="Gho5t's Blog">
     </span>
 
     
@@ -830,47 +741,20 @@ try {
       
         
           
-            <h1 id="NSDate"><a href="#NSDate" class="headerlink" title="NSDate"></a>NSDate</h1><h2 id="NSDate-初始化获取的时间与事实相差8小时"><a href="#NSDate-初始化获取的时间与事实相差8小时" class="headerlink" title="NSDate 初始化获取的时间与事实相差8小时"></a>NSDate 初始化获取的时间与事实相差8小时</h2><pre><code>NSDate *date = [NSDate date];
-NSLog(@&quot;Date : %@&quot;, date);
-//2017-05-14 16:59:03 NSDateDemoDate : 2017-05-14 08:59:03 +0000
-</code></pre><p>原因是他获取的是零时区的时间，而我大天朝在东八区，所以有八个小时的时差！<br><strong>Solution</strong>:</p>
-<pre><code>NSTimeZone *zone = [NSTimeZone systemTimeZone];
-NSTimeInterval timeInterval = [zone secondsFromGMTForDate:date];
-NSDate *localDate = [date dateByAddingTimeInterval:timeInterval];
-NSLog(@&quot;Local Date: %@&quot;,localDate);
-//2017-05-14 16:59:03 NSDateDemo Local Date: 2017-05-14 16:59:03 +0000
-</code></pre><h2 id="借助-NSDateFormatter-实现NSDate-lt-NSString"><a href="#借助-NSDateFormatter-实现NSDate-lt-NSString" class="headerlink" title="借助 NSDateFormatter  实现NSDate \&lt;-> NSString"></a>借助 NSDateFormatter  实现NSDate \&lt;-> NSString</h2><h3 id="NSDate-NSString"><a href="#NSDate-NSString" class="headerlink" title="NSDate -> NSString"></a>NSDate -> NSString</h3><pre><code>NSDateFormatter *dateformatter = [[NSDateFormatter alloc]init];
-[dateformatter setDateFormat:@&quot;YYYY/MM/dd HH:mm:ss&quot;];
-NSString *dateStr = [dateformatter stringFromDate:date];
-NSLog(@&quot;dateString : %@&quot;,dateStr);
+            <h1 id="NSDate"><a href="#NSDate" class="headerlink" title="NSDate"></a>NSDate</h1><h2 id="NSDate-初始化获取的时间与事实相差8小时"><a href="#NSDate-初始化获取的时间与事实相差8小时" class="headerlink" title="NSDate 初始化获取的时间与事实相差8小时"></a>NSDate 初始化获取的时间与事实相差8小时</h2><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDate</span> *date = [<span class="built_in">NSDate</span> date];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"Date : %@"</span>, date);</div><div class="line"><span class="comment">//2017-05-14 16:59:03 NSDateDemoDate : 2017-05-14 08:59:03 +0000</span></div></pre></td></tr></table></figure>
+</code></pre><p>原因是他获取的是零时区的时间，而我大天朝在东八区，所以有八个小时的时差！<br><strong>Solution</strong>:<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSTimeZone</span> *zone = [<span class="built_in">NSTimeZone</span> systemTimeZone];</div><div class="line"><span class="built_in">NSTimeInterval</span> timeInterval = [zone secondsFromGMTForDate:date];</div><div class="line"><span class="built_in">NSDate</span> *localDate = [date dateByAddingTimeInterval:timeInterval];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"Local Date: %@"</span>,localDate);</div><div class="line"><span class="comment">//2017-05-14 16:59:03 NSDateDemo Local Date: 2017-05-14 16:59:03 +0000</span></div></pre></td></tr></table></figure></p>
+<h2 id="借助-NSDateFormatter-实现NSDate-lt-NSString"><a href="#借助-NSDateFormatter-实现NSDate-lt-NSString" class="headerlink" title="借助 NSDateFormatter  实现NSDate \&lt;-> NSString"></a>借助 NSDateFormatter  实现NSDate \&lt;-> NSString</h2><h3 id="NSDate-NSString"><a href="#NSDate-NSString" class="headerlink" title="NSDate -> NSString"></a>NSDate -> NSString</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDateFormatter</span> *dateformatter = [[<span class="built_in">NSDateFormatter</span> alloc]init];</div><div class="line">[dateformatter setDateFormat:<span class="string">@"YYYY/MM/dd HH:mm:ss"</span>];</div><div class="line"><span class="built_in">NSString</span> *dateStr = [dateformatter stringFromDate:date];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"dateString : %@"</span>,dateStr);</div></pre></td></tr></table></figure>
 </code></pre><ul>
 <li>date的时间是2017-05-14 09:22:56 而dateStr打印出来却是 2017/05/14 17:22:56 自动帮你加了8小时，是因为<code>dateformatter.timeZone</code> 默认设置成了 Asia/Shanghai (GMT+8) offset 28800</li>
 <li>至于蜜汁符号<code>YYYY/MM/dd HH:mm:ss</code>可以参考<a href="http://unicode.org/reports/tr35/tr35-6.html#Date_Format_Patterns" title="说明符号文档" target="_blank" rel="external">说明符号文档</a>；</li>
 </ul>
-<h3 id="NSString-NSDate"><a href="#NSString-NSDate" class="headerlink" title="NSString -> NSDate"></a>NSString -> NSDate</h3><pre><code>NSDate *date1 = [dateformatter dateFromString:dateStr];
-NSLog(@&quot;date1 : %@&quot;,date1);
-</code></pre><h2 id="NSDate-Comparison"><a href="#NSDate-Comparison" class="headerlink" title="NSDate Comparison"></a>NSDate Comparison</h2><pre><code>- (NSDate *)earlierDate:(NSDate *)anotherDate;
-- (NSDate *)laterDate:(NSDate *)anotherDate;
-- (NSComparisonResult)compare:(NSDate *)other;
-- (BOOL)isEqualToDate:(NSDate *)otherDate;
-</code></pre><p>NSComparisonResult ：</p>
-<pre><code>typedef NS_ENUM(NSInteger, NSComparisonResult) {_
-NSOrderedAscending = -1L, 
-NSOrderedSame, 
-NSOrderedDescending
-};
-</code></pre><h2 id="NSDateComponents"><a href="#NSDateComponents" class="headerlink" title="NSDateComponents"></a>NSDateComponents</h2><p><code>NSDateComponents</code> 和<code>NSCalendar</code> 搭配使用：</p>
-<pre><code>NSCalendar *calendar = [[NSCalendar alloc]initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
-NSDateComponents *components = [calendar components:NSCalendarUnitDay|NSCalendarUnitYear|NSCalendarUnitMonth fromDate:[NSDate date]];
-NSLog(@&quot;%@&quot;,components);
-</code></pre><p>log结果</p>
-<pre><code>Calendar Year: 2017
-Month: 5
-Leap month: no
-Day: 14
-</code></pre><p><em>Tips:</em><br>计算两个时间相差多少天：</p>
-<pre><code>NSDateComponents *components = [calendar components:NSCalendarUnitDay fromDate:dateTemp toDate:nowDate options:NSCalendarWrapComponents];
-</code></pre><p>最后关于<code>NSDate</code>的信息略庞大，后续找个时间来填坑，同时在做这份笔记📒的时候，无意中找到一份比较全面资料<a href="http://www.cocoachina.com/swift/20151126/14430.html" title="A Beginner’s Guide to NSDate in Swift" target="_blank" rel="external">A Beginner’s Guide to NSDate in Swift</a>，默默收藏下！</p>
+<h3 id="NSString-NSDate"><a href="#NSString-NSDate" class="headerlink" title="NSString -> NSDate"></a>NSString -> NSDate</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDate</span> *date1 = [dateformatter dateFromString:dateStr];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"date1 : %@"</span>,date1);</div></pre></td></tr></table></figure>
+</code></pre><h2 id="NSDate-Comparison"><a href="#NSDate-Comparison" class="headerlink" title="NSDate Comparison"></a>NSDate Comparison</h2><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">- (<span class="built_in">NSDate</span> *)earlierDate:(<span class="built_in">NSDate</span> *)anotherDate;</div><div class="line">- (<span class="built_in">NSDate</span> *)laterDate:(<span class="built_in">NSDate</span> *)anotherDate;</div><div class="line">- (<span class="built_in">NSComparisonResult</span>)compare:(<span class="built_in">NSDate</span> *)other;</div><div class="line">- (<span class="built_in">BOOL</span>)isEqualToDate:(<span class="built_in">NSDate</span> *)otherDate;</div></pre></td></tr></table></figure>
+</code></pre><p>NSComparisonResult ：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">NSComparisonResult</span>) &#123;_</div><div class="line"><span class="built_in">NSOrderedAscending</span> = <span class="number">-1</span>L, </div><div class="line"><span class="built_in">NSOrderedSame</span>, </div><div class="line"><span class="built_in">NSOrderedDescending</span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h2 id="NSDateComponents"><a href="#NSDateComponents" class="headerlink" title="NSDateComponents"></a>NSDateComponents</h2><p><code>NSDateComponents</code> 和<code>NSCalendar</code> 搭配使用：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSCalendar</span> *calendar = [[<span class="built_in">NSCalendar</span> alloc]initWithCalendarIdentifier:<span class="built_in">NSCalendarIdentifierGregorian</span>];</div><div class="line"><span class="built_in">NSDateComponents</span> *components = [calendar components:<span class="built_in">NSCalendarUnitDay</span>|<span class="built_in">NSCalendarUnitYear</span>|<span class="built_in">NSCalendarUnitMonth</span> fromDate:[<span class="built_in">NSDate</span> date]];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,components);</div></pre></td></tr></table></figure></p>
+<p>log结果<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Calendar Year: <span class="number">2017</span></div><div class="line">Month: <span class="number">5</span></div><div class="line">Leap month: no</div><div class="line">Day: <span class="number">14</span></div></pre></td></tr></table></figure></p>
+<p><em>Tips:</em><br>计算两个时间相差多少天：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">NSDateComponents</span> *components = [calendar components:<span class="built_in">NSCalendarUnitDay</span> fromDate:dateTemp toDate:nowDate options:<span class="built_in">NSCalendarWrapComponents</span>];</div></pre></td></tr></table></figure></p>
+<p>最后关于<code>NSDate</code>的信息略庞大，后续找个时间来填坑，同时在做这份笔记📒的时候，无意中找到一份比较全面资料<a href="http://www.cocoachina.com/swift/20151126/14430.html" title="A Beginner’s Guide to NSDate in Swift" target="_blank" rel="external">A Beginner’s Guide to NSDate in Swift</a>，默默收藏下！</p>
 
           
         
@@ -911,7 +795,7 @@ Day: 14
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://j4ckchan.com/2017/04/23/Block-笔记/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2017/04/23/Block-笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -920,7 +804,7 @@ Day: 14
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="J4ckChan's Blog">
+      <meta itemprop="name" content="Gho5t's Blog">
     </span>
 
     
@@ -1006,78 +890,28 @@ Day: 14
 <li>Block 的强大之处：会捕获栈上的变量(或指针)，将其复制为自己私有的const(变量)；</li>
 <li>(如果在Block中修改Block块外的)栈上的变量和指针，那么这些变量和指针必须用<code>__block</code>关键字申明(否则就会跟上面的情况一样只是捕获他们的瞬时值)。</li>
 </ul>
-<h2 id="block的使用"><a href="#block的使用" class="headerlink" title="block的使用"></a>block的使用</h2><h3 id="block类型的语法结构如下："><a href="#block类型的语法结构如下：" class="headerlink" title="block类型的语法结构如下："></a>block类型的语法结构如下：</h3><pre><code>return_type (^block_name)(arguments)
-</code></pre><p>举个🌰：</p>
-<pre><code>int (^addBlock)(int a, int b) = ^(int a, int b){
-    return a + b;
-}
-</code></pre><h3 id="为常用的block类型创建typedef"><a href="#为常用的block类型创建typedef" class="headerlink" title="为常用的block类型创建typedef"></a>为常用的block类型创建typedef</h3><pre><code>typedef return_type(^name)(arguments);
-</code></pre><p>用执行异步任务的“completion handler”来举个🌰：</p>
-<pre><code>typedef void(^EOCCompletionHandler) (NSData *data, NSError *error);
-
-- (void)startWithCompletionHandle:(EOCCompletionHandler)completion;
-</code></pre><p>block的命名最好是：<strong>类名</strong> + <strong>block的功能</strong> + <strong>CompletionHandle</strong>；</p>
-<p>来个🌰：</p>
-<pre><code>typedef void(^ACAccountStoreSaveCompetionHandle) (BOOL success, NSError *error);
-</code></pre><p>小结：typedef 可以使block使用起来更加简单，如果要refactor代码的时候，只需修改typedef中block的name即可；</p>
+<h2 id="block的使用"><a href="#block的使用" class="headerlink" title="block的使用"></a>block的使用</h2><h3 id="block类型的语法结构如下："><a href="#block类型的语法结构如下：" class="headerlink" title="block类型的语法结构如下："></a>block类型的语法结构如下：</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return_type (^block_name)(arguments)</div></pre></td></tr></table></figure>
+</code></pre><p>举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (^addBlock)(<span class="keyword">int</span> a, <span class="keyword">int</span> b) = ^(<span class="keyword">int</span> a, <span class="keyword">int</span> b)&#123;</div><div class="line">    <span class="keyword">return</span> a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="为常用的block类型创建typedef"><a href="#为常用的block类型创建typedef" class="headerlink" title="为常用的block类型创建typedef"></a>为常用的block类型创建typedef</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> return_type(^name)(arguments);</div></pre></td></tr></table></figure>
+</code></pre><p>用执行异步任务的“completion handler”来举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^EOCCompletionHandler) (<span class="built_in">NSData</span> *data, <span class="built_in">NSError</span> *error);</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)startWithCompletionHandle:(EOCCompletionHandler)completion;</div></pre></td></tr></table></figure></p>
+<p>block的命名最好是：<strong>类名</strong> + <strong>block的功能</strong> + <strong>CompletionHandle</strong>；</p>
+<p>来个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^ACAccountStoreSaveCompetionHandle) (<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> *error);</div></pre></td></tr></table></figure></p>
+<p>小结：typedef 可以使block使用起来更加简单，如果要refactor代码的时候，只需修改typedef中block的name即可；</p>
 <h3 id="block的retain-cycle"><a href="#block的retain-cycle" class="headerlink" title="block的retain cycle"></a>block的retain cycle</h3><p>当使用代码块和异步分发的时候，要注意避免引用循环。</p>
-<h4 id="怎么引起循环引用的呢？"><a href="#怎么引起循环引用的呢？" class="headerlink" title="怎么引起循环引用的呢？"></a>怎么引起循环引用的呢？</h4><p>举个🌰：</p>
-<pre><code>self.completionHandler = ^{
-    NSLog(@&quot;%@&quot;, self);
-}
-
-MyViewController *myController = [[MyViewController alloc] init...];
-[self presentViewController:myController
-                animated:YES
-                 completion:self.completionHandler];
-</code></pre><p>Retain Cycle ：self通过属性持有block，block持有self，就形成了循环引用。(self -》block -》self)</p>
+<h4 id="怎么引起循环引用的呢？"><a href="#怎么引起循环引用的呢？" class="headerlink" title="怎么引起循环引用的呢？"></a>怎么引起循环引用的呢？</h4><p>举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.completionHandler = ^&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, <span class="keyword">self</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyViewController *myController = [[MyViewController alloc] init...];</div><div class="line">[<span class="keyword">self</span> presentViewController:myController</div><div class="line">                animated:<span class="literal">YES</span></div><div class="line">                 completion:<span class="keyword">self</span>.completionHandler];</div></pre></td></tr></table></figure></p>
+<p>Retain Cycle ：self通过属性持有block，block持有self，就形成了循环引用。(self -》block -》self)</p>
 <h4 id="避免block方法及差异："><a href="#避免block方法及差异：" class="headerlink" title="避免block方法及差异："></a>避免block方法及差异：</h4><ol>
 <li>在 block 外定义一个 <code>__weak</code> 的引用到 self，并且在 block 里面使用这个弱引用；</li>
-<li>在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用；<br>方案 1：在 block 外定义一个 <code>__weak</code> 的 引用到 self，并且在 block 里面使用这个弱引用：</li>
+<li>在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用；<br>方案 1：在 block 外定义一个 <code>__weak</code> 的 引用到 self，并且在 block 里面使用这个弱引用： <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">__<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line"><span class="keyword">self</span>.completionHandler = ^&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, weakSelf);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">MyViewController *myController = [[MyViewController alloc] init...];</div><div class="line">[<span class="keyword">self</span> presentViewController:myController</div><div class="line">                  animated:<span class="literal">YES</span></div><div class="line">               completion:<span class="keyword">self</span>.completionHandler];</div></pre></td></tr></table></figure>
+</li>
 </ol>
-<pre><code>__weak typeof(self) weakSelf = self;
-self.completionHandler = ^{
-    NSLog(@&quot;%@&quot;, weakSelf);
-};
-
-MyViewController *myController = [[MyViewController alloc] init...];
-[self presentViewController:myController
-                  animated:YES
-               completion:self.completionHandler];
-</code></pre><p>方案 2： 在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用。</p>
-<p>不管 block 是否通过属性被 retain ，这里也不会发生循环引用。如果 block 被传递到其他对象并且被复制了，执行的时候，weakSelf 可能被nil，因为强引用被赋值并且不会变成nil的时候，我们确保对象 在 block 调用的完整周期里面被 retain了，如果抢占发生了，随后的对 strongSelf 的执行会继续并且会产生一样的值。如果 strongSelf 的执行到 nil，那么在 block 不能正确执行前已经返回了。</p>
-<pre><code>__weak typeof(self) weakSelf = self;
-myObj.myBlock =  ^{
-    __strong typeof(self) strongSelf = weakSelf;
-    if (strongSelf) {
-        [strongSelf doSomething]; // strongSelf != nil
-        // preemption, strongSelf still not nil（抢占的时候，strongSelf 还是非 nil 的)
-        [strongSelf doSomethingElse]; // strongSelf != nil
-    }else {
-        // Probably nothing...
-        return;
-     }
-};
-</code></pre><p>小结：<br>方案 1: 当 block 被声明为一个 property 的时候使用。<br>方案 2: 和并发执行有关。当涉及异步的服务的时候，block 可以在之后被执行，并且不会发生关于 self 是否存在的问题</p>
+<p>方案 2： 在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用。</p>
+<p>不管 block 是否通过属性被 retain ，这里也不会发生循环引用。如果 block 被传递到其他对象并且被复制了，执行的时候，weakSelf 可能被nil，因为强引用被赋值并且不会变成nil的时候，我们确保对象 在 block 调用的完整周期里面被 retain了，如果抢占发生了，随后的对 strongSelf 的执行会继续并且会产生一样的值。如果 strongSelf 的执行到 nil，那么在 block 不能正确执行前已经返回了。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line">myObj.myBlock =  ^&#123;</div><div class="line">    __<span class="keyword">strong</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) strongSelf = weakSelf;</div><div class="line">    <span class="keyword">if</span> (strongSelf) &#123;</div><div class="line">        [strongSelf doSomething]; <span class="comment">// strongSelf != nil</span></div><div class="line">        <span class="comment">// preemption, strongSelf still not nil（抢占的时候，strongSelf 还是非 nil 的)</span></div><div class="line">        [strongSelf doSomethingElse]; <span class="comment">// strongSelf != nil</span></div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Probably nothing...</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>小结：<br>方案 1: 当 block 被声明为一个 property 的时候使用。<br>方案 2: 和并发执行有关。当涉及异步的服务的时候，block 可以在之后被执行，并且不会发生关于 self 是否存在的问题</p>
 <h3 id="对象之间的信息传递的🌰"><a href="#对象之间的信息传递的🌰" class="headerlink" title="对象之间的信息传递的🌰"></a>对象之间的信息传递的🌰</h3><p>做了个Demo，在两个ViewController之间进行信息的传递，ViewController中设置个label，展示信息，而NextViewController中的textfield中输入要传递的信息string；</p>
-<p>NextViewController.h </p>
-<pre><code>typedef void(^PassTextFieldValueBlock)(NSString *string)
-
-@interface NextViewController:ViewController
-
-@property (nonatomic,copy) PassTextFieldValueBlock passTextFieldValueBlock;
-
-@end
-</code></pre><p>ViewController.m</p>
-<pre><code>-(IBACtion)pushNextViewController:(UIButton *)sender{
-    NextViewController *nextVC = [[NextViewController alloc]init];
-    __weak typeof(self) weakSelf = self;
-    nextVC.passTextFieldValueBlock = ^(NSString *string){
-        //call Reset label method;  
-    };
-    [self.navigationController pushViewController:nextVC anmiated:Yes]
-}
-</code></pre><p>具体的实现过程可以参考<a href="https://github.com/J4ckChan/BlockDemo" title="Block Demo" target="_blank" rel="external">BlockDemo</a></p>
+<p>NextViewController.h<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^PassTextFieldValueBlock)(<span class="built_in">NSString</span> *string)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NextViewController</span>:<span class="title">ViewController</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) PassTextFieldValueBlock passTextFieldValueBlock;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
+<p>ViewController.m<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-(IBACtion)pushNextViewController:(<span class="built_in">UIButton</span> *)sender&#123;</div><div class="line">    NextViewController *nextVC = [[NextViewController alloc]init];</div><div class="line">    __<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line">    nextVC.passTextFieldValueBlock = ^(<span class="built_in">NSString</span> *string)&#123;</div><div class="line">        <span class="comment">//call Reset label method;  </span></div><div class="line">    &#125;;</div><div class="line">    [<span class="keyword">self</span>.navigationController pushViewController:nextVC anmiated:Yes]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>具体的实现过程可以参考<a href="https://github.com/J4ckChan/BlockDemo" title="Block Demo" target="_blank" rel="external">BlockDemo</a></p>
 
           
         

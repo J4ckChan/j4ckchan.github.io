@@ -286,6 +286,175 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2018/04/02/GCD笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="J4ck Chan">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Gho5t's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/04/02/GCD笔记/" itemprop="url">
+                  GCD笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T22:13:15+08:00">
+                2018-04-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/04/02/GCD笔记/" class="leancloud_visitors" data-flag-title="GCD笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h2><h3 id="什么是GCD"><a href="#什么是GCD" class="headerlink" title="什么是GCD"></a>什么是GCD</h3><p>Grand Central Dispatch（GCD）是异步执行任务的技术之一。一般将应用程序中记述的线程管理用的代码在系统级中实现。开发者只需定义想执行的任务并追加到适合Dispatch Queue中，GCD就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可统一管理，也可执行任务，这样就比以前的线程更加有效率。<br>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 长时间处理结束，主线程使用该处理结果</div><div class="line">		 */</div><div class="line"></div><div class="line">		<span class="built_in">dispatch_async</span>(dispatch_get_main_queue(),^&#123;</div><div class="line">			<span class="comment">/*</span></div><div class="line">			 *  在主线程可以执行处理</div><div class="line">			 *   e.g update UI</div><div class="line">			 */</div><div class="line">		&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="多线程编程"><a href="#多线程编程" class="headerlink" title="多线程编程"></a>多线程编程</h3><p>“1个CPU执行的CPU命令列为一条无分叉路径”即为“线程”。这种分叉的路径不只一条，存在有多条的时即为“多线程”。<br>由于使用多线程的程序可以在某个线程和其他线程之间反复多次进行上下文切换，因此看上去就好像1个CPU核能够并列地执行多个线程一样。而且在具有多个CPU核的情况下，就不是“看上去”了，而是真是提供了多个CPU核并行执行多个线程的技术。这种利用多线程编程的技术叫做“多线程编程”。<br>多线程编程的优势：</p>
+<ul>
+<li>可以保证App响应的性能</li>
+</ul>
+<p>易发生问题：</p>
+<ul>
+<li>数据竞争，e.g 多个线程更新相同的资源会导致数据不一致</li>
+<li>死锁，e.g 停止等待事件的线程会导致多个线程相互持续等待</li>
+<li>使用太多线程会消耗大量内存</li>
+</ul>
+<h2 id="GCD-的API"><a href="#GCD-的API" class="headerlink" title="GCD 的API"></a>GCD 的API</h2><h3 id="Dispatch-Queue"><a href="#Dispatch-Queue" class="headerlink" title="Dispatch Queue"></a>Dispatch Queue</h3><p>Dispatch Queue 的种类：</p>
+<ul>
+<li>Serial Dispatch Queue            等待现在执行中处理结果</li>
+<li>Concurrent Dispatch Queue  不等待现在执行中的处理结果</li>
+</ul>
+<h3 id="dispatch-queue-create"><a href="#dispatch-queue-create" class="headerlink" title="dispatch_queue_create"></a>dispatch_queue_create</h3><p>创建Dispatch Queue：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_create(“com.exmple.gcd”,DISPATCH_QUEUE_CONCURRENT);</div></pre></td></tr></table></figure></p>
+<p>第一个参数推荐使用App ID这种逆序全程域名，第二个参数是用来确定Queue的种类，填写<strong>NULL就是Serial Dispatch Queue</strong>，<strong>DISPATCH_QUEUE_CONCURRENT是Concurrent Dispatch Queue</strong></p>
+<h3 id="系统标准提供Dispatch-Queue"><a href="#系统标准提供Dispatch-Queue" class="headerlink" title="系统标准提供Dispatch Queue"></a>系统标准提供Dispatch Queue</h3><p>Serial Dispatch Queue </p>
+<ul>
+<li>Main Dispatch Queue 主线程执行<br>获取方式：  <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> mainQueue = dispatch_queue_get_main_queue();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>Concurrent Dispatch Queue</p>
+<ul>
+<li>Global Dispatch Queue (High Priority)  执行优先级：高</li>
+<li>Global Dispatch Queue (Default Priority)  执行优先级：默认</li>
+<li>Global Dispatch Queue (Low Priority)  执行优先级：低</li>
+<li>Global Dispatch Queue (Background Priority)  执行优先级：后台<br>获取方式  <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="dispatch-set-target-queue"><a href="#dispatch-set-target-queue" class="headerlink" title="dispatch_set_target_queue"></a>dispatch_set_target_queue</h3><p>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> serialQueue = dispatch_queue_create(<span class="string">"com.exmple.gcd"</span>, <span class="literal">NULL</span>);</div><div class="line"><span class="built_in">dispatch_queue_t</span> globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</div><div class="line">dispatch_set_target_queue(serialQueue, globalQueue);</div></pre></td></tr></table></figure></p>
+<p>指定要变更执行优先级的Dispatch Queue为dispatch_set_target_queue函数第一个参数，指定与要使用的执行优先级相同优先级的Global Dispatch Queue为第二个参数（目标）。</p>
+<h3 id="dispatch-after"><a href="#dispatch-after" class="headerlink" title="dispatch_after"></a>dispatch_after</h3><p>想在3s后执行处理：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, <span class="number">3</span>ull*<span class="built_in">NSEC_PER_SEC</span>);</div><div class="line">dispatch_after(time, dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//code to be executed after a specified delay</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>_第一个参数dispatch_time_t，该值可以用dipatch_time函数或dispatch_walltime函数获取；_<br>⚠️：dispatch_after函数并不是在指定时间后执行处理，而只是在指定时间最佳处理到Dispatch Queue。</p>
+<h3 id="Dispatch-Group"><a href="#Dispatch-Group" class="headerlink" title="Dispatch Group"></a>Dispatch Group</h3><p>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line">dispatch_group_t group = dispatch_group_create();</div><div class="line"></div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block1"</span>);</div><div class="line">&#125;);</div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block2"</span>);</div><div class="line">&#125;);</div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block3"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_notify(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"done"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-barrier-async"><a href="#dispatch-barrier-async" class="headerlink" title="dispatch_barrier_async"></a>dispatch_barrier_async</h3><p>避免数据竞争：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block0 for reading</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block1 for reading</span></div><div class="line">&#125;);</div><div class="line">dispatch_barrier_async(queue, ^&#123;</div><div class="line"><span class="comment">//block for writing</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block2 for reading</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block3 for reading</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-apply"><a href="#dispatch-apply" class="headerlink" title="dispatch_apply"></a>dispatch_apply</h3><p>由于dispatch_apply函数也和dispatch_sync函数相同，会等待处理执行结束，因此推荐在dispatch_asyn函数中非同步地执行dispatch_apply函数。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">dispatch_apply([array count], queue, ^(size_t index) &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%zu:%@"</span>,index,[array objectAtIndex:index]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"done"</span>);</div><div class="line">&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="Dispatch-Semaphore"><a href="#Dispatch-Semaphore" class="headerlink" title="Dispatch Semaphore"></a>Dispatch Semaphore</h3><p>虽然使用Serial Dispatch Queue 和 dispatch_barrier_async 函数可以避免数据竞争，但是有必要进行更细粒度的排他控制。</p>
+<p>Dispatch Semaphore是持有计数的信号，该计数是多线程编程中的计数类型信号。计数为0时等待，计数为1或大于1时，减去1而不等待。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(<span class="number">1</span>);</div><div class="line"><span class="built_in">NSMutableArray</span> *array = [[<span class="built_in">NSMutableArray</span> alloc]init];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</div><div class="line">[array addObject:[<span class="built_in">NSNumber</span> numberWithInt:i]];</div><div class="line">dispatch_semaphore_signal(semaphore);</div><div class="line">&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-once"><a href="#dispatch-once" class="headerlink" title="dispatch_once"></a>dispatch_once</h3><p>应用在单例模式，在生成单例对象时使用：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</div><div class="line"><span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</div><div class="line"><span class="comment">//code to be executed once</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2018/04/01/关于RunLoop的笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -988,7 +1157,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1001,7 +1170,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

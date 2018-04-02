@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="GCD," />
 
 
 
@@ -89,37 +89,16 @@
 
 
 
-<meta name="description" content="Block基础的知识block是C、C++ 、OC 的closure。
-
-block 是在栈上创建的；
-block 可以复制到堆上；
-Block 的强大之处：会捕获栈上的变量(或指针)，将其复制为自己私有的const(变量)；
-(如果在Block中修改Block块外的)栈上的变量和指针，那么这些变量和指针必须用__block关键字申明(否则就会跟上面的情况一样只是捕获他们的瞬时值)。
-
-block">
+<meta name="description" content="GCD什么是GCDGrand Central Dispatch（GCD）是异步执行任务的技术之一。一般将应用程序中记述的线程管理用的代码在系统级中实现。开发者只需定义想执行的任务并追加到适合Dispatch Queue中，GCD就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可统一管理，也可执行任务，这样就比以前的线程更加有效率。🌰：    123456789101">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Block 笔记">
-<meta property="og:url" content="https://j4ckchan.github.io/2017/04/23/Block-笔记/index.html">
+<meta property="og:title" content="GCD笔记">
+<meta property="og:url" content="https://j4ckchan.github.io/2018/04/02/GCD笔记/index.html">
 <meta property="og:site_name" content="Gho5t's Blog">
-<meta property="og:description" content="Block基础的知识block是C、C++ 、OC 的closure。
-
-block 是在栈上创建的；
-block 可以复制到堆上；
-Block 的强大之处：会捕获栈上的变量(或指针)，将其复制为自己私有的const(变量)；
-(如果在Block中修改Block块外的)栈上的变量和指针，那么这些变量和指针必须用__block关键字申明(否则就会跟上面的情况一样只是捕获他们的瞬时值)。
-
-block">
-<meta property="og:updated_time" content="2018-04-01T16:24:11.132Z">
+<meta property="og:description" content="GCD什么是GCDGrand Central Dispatch（GCD）是异步执行任务的技术之一。一般将应用程序中记述的线程管理用的代码在系统级中实现。开发者只需定义想执行的任务并追加到适合Dispatch Queue中，GCD就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可统一管理，也可执行任务，这样就比以前的线程更加有效率。🌰：    123456789101">
+<meta property="og:updated_time" content="2018-04-02T14:25:21.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Block 笔记">
-<meta name="twitter:description" content="Block基础的知识block是C、C++ 、OC 的closure。
-
-block 是在栈上创建的；
-block 可以复制到堆上；
-Block 的强大之处：会捕获栈上的变量(或指针)，将其复制为自己私有的const(变量)；
-(如果在Block中修改Block块外的)栈上的变量和指针，那么这些变量和指针必须用__block关键字申明(否则就会跟上面的情况一样只是捕获他们的瞬时值)。
-
-block">
+<meta name="twitter:title" content="GCD笔记">
+<meta name="twitter:description" content="GCD什么是GCDGrand Central Dispatch（GCD）是异步执行任务的技术之一。一般将应用程序中记述的线程管理用的代码在系统级中实现。开发者只需定义想执行的任务并追加到适合Dispatch Queue中，GCD就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可统一管理，也可执行任务，这样就比以前的线程更加有效率。🌰：    123456789101">
 
 
 
@@ -147,13 +126,13 @@ block">
 
 
 
-  <link rel="canonical" href="https://j4ckchan.github.io/2017/04/23/Block-笔记/"/>
+  <link rel="canonical" href="https://j4ckchan.github.io/2018/04/02/GCD笔记/"/>
 
 
 
 
 
-  <title> Block 笔记 | Gho5t's Blog </title>
+  <title> GCD笔记 | Gho5t's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -306,7 +285,7 @@ block">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2017/04/23/Block-笔记/">
+    <link itemprop="mainEntityOfPage" href="https://j4ckchan.github.io/2018/04/02/GCD笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="J4ck Chan">
@@ -327,7 +306,7 @@ block">
             
             
               
-                Block 笔记
+                GCD笔记
               
             
           </h1>
@@ -342,8 +321,8 @@ block">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-23T22:41:03+08:00">
-                2017-04-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-02T22:13:15+08:00">
+                2018-04-02
               </time>
             
 
@@ -360,7 +339,7 @@ block">
 
           
           
-             <span id="/2017/04/23/Block-笔记/" class="leancloud_visitors" data-flag-title="Block 笔记">
+             <span id="/2018/04/02/GCD笔记/" class="leancloud_visitors" data-flag-title="GCD笔记">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -389,35 +368,47 @@ block">
       
 
       
-        <h1 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h1><h2 id="基础的知识"><a href="#基础的知识" class="headerlink" title="基础的知识"></a>基础的知识</h2><p>block是C、<code>C++</code> 、OC 的closure。</p>
+        <h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a>GCD</h2><h3 id="什么是GCD"><a href="#什么是GCD" class="headerlink" title="什么是GCD"></a>什么是GCD</h3><p>Grand Central Dispatch（GCD）是异步执行任务的技术之一。一般将应用程序中记述的线程管理用的代码在系统级中实现。开发者只需定义想执行的任务并追加到适合Dispatch Queue中，GCD就能生成必要的线程并计划执行任务。由于线程管理是作为系统的一部分来实现的，因此可统一管理，也可执行任务，这样就比以前的线程更加有效率。<br>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">		<span class="comment">/*</span></div><div class="line">		 * 长时间处理结束，主线程使用该处理结果</div><div class="line">		 */</div><div class="line"></div><div class="line">		<span class="built_in">dispatch_async</span>(dispatch_get_main_queue(),^&#123;</div><div class="line">			<span class="comment">/*</span></div><div class="line">			 *  在主线程可以执行处理</div><div class="line">			 *   e.g update UI</div><div class="line">			 */</div><div class="line">		&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="多线程编程"><a href="#多线程编程" class="headerlink" title="多线程编程"></a>多线程编程</h3><p>“1个CPU执行的CPU命令列为一条无分叉路径”即为“线程”。这种分叉的路径不只一条，存在有多条的时即为“多线程”。<br>由于使用多线程的程序可以在某个线程和其他线程之间反复多次进行上下文切换，因此看上去就好像1个CPU核能够并列地执行多个线程一样。而且在具有多个CPU核的情况下，就不是“看上去”了，而是真是提供了多个CPU核并行执行多个线程的技术。这种利用多线程编程的技术叫做“多线程编程”。<br>多线程编程的优势：</p>
 <ul>
-<li>block 是在栈上创建的；</li>
-<li>block 可以复制到堆上；</li>
-<li>Block 的强大之处：会捕获栈上的变量(或指针)，将其复制为自己私有的const(变量)；</li>
-<li>(如果在Block中修改Block块外的)栈上的变量和指针，那么这些变量和指针必须用<code>__block</code>关键字申明(否则就会跟上面的情况一样只是捕获他们的瞬时值)。</li>
+<li>可以保证App响应的性能</li>
 </ul>
-<h2 id="block的使用"><a href="#block的使用" class="headerlink" title="block的使用"></a>block的使用</h2><h3 id="block类型的语法结构如下："><a href="#block类型的语法结构如下：" class="headerlink" title="block类型的语法结构如下："></a>block类型的语法结构如下：</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return_type (^block_name)(arguments)</div></pre></td></tr></table></figure>
-</code></pre><p>举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> (^addBlock)(<span class="keyword">int</span> a, <span class="keyword">int</span> b) = ^(<span class="keyword">int</span> a, <span class="keyword">int</span> b)&#123;</div><div class="line">    <span class="keyword">return</span> a + b;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="为常用的block类型创建typedef"><a href="#为常用的block类型创建typedef" class="headerlink" title="为常用的block类型创建typedef"></a>为常用的block类型创建typedef</h3><pre><code><figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> return_type(^name)(arguments);</div></pre></td></tr></table></figure>
-</code></pre><p>用执行异步任务的“completion handler”来举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^EOCCompletionHandler) (<span class="built_in">NSData</span> *data, <span class="built_in">NSError</span> *error);</div><div class="line"></div><div class="line">- (<span class="keyword">void</span>)startWithCompletionHandle:(EOCCompletionHandler)completion;</div></pre></td></tr></table></figure></p>
-<p>block的命名最好是：<strong>类名</strong> + <strong>block的功能</strong> + <strong>CompletionHandle</strong>；</p>
-<p>来个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^ACAccountStoreSaveCompetionHandle) (<span class="built_in">BOOL</span> success, <span class="built_in">NSError</span> *error);</div></pre></td></tr></table></figure></p>
-<p>小结：typedef 可以使block使用起来更加简单，如果要refactor代码的时候，只需修改typedef中block的name即可；</p>
-<h3 id="block的retain-cycle"><a href="#block的retain-cycle" class="headerlink" title="block的retain cycle"></a>block的retain cycle</h3><p>当使用代码块和异步分发的时候，要注意避免引用循环。</p>
-<h4 id="怎么引起循环引用的呢？"><a href="#怎么引起循环引用的呢？" class="headerlink" title="怎么引起循环引用的呢？"></a>怎么引起循环引用的呢？</h4><p>举个🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">self</span>.completionHandler = ^&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, <span class="keyword">self</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">MyViewController *myController = [[MyViewController alloc] init...];</div><div class="line">[<span class="keyword">self</span> presentViewController:myController</div><div class="line">                animated:<span class="literal">YES</span></div><div class="line">                 completion:<span class="keyword">self</span>.completionHandler];</div></pre></td></tr></table></figure></p>
-<p>Retain Cycle ：self通过属性持有block，block持有self，就形成了循环引用。(self -》block -》self)</p>
-<h4 id="避免block方法及差异："><a href="#避免block方法及差异：" class="headerlink" title="避免block方法及差异："></a>避免block方法及差异：</h4><ol>
-<li>在 block 外定义一个 <code>__weak</code> 的引用到 self，并且在 block 里面使用这个弱引用；</li>
-<li>在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用；<br>方案 1：在 block 外定义一个 <code>__weak</code> 的 引用到 self，并且在 block 里面使用这个弱引用： <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">__<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line"><span class="keyword">self</span>.completionHandler = ^&#123;</div><div class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>, weakSelf);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">MyViewController *myController = [[MyViewController alloc] init...];</div><div class="line">[<span class="keyword">self</span> presentViewController:myController</div><div class="line">                  animated:<span class="literal">YES</span></div><div class="line">               completion:<span class="keyword">self</span>.completionHandler];</div></pre></td></tr></table></figure>
+<p>易发生问题：</p>
+<ul>
+<li>数据竞争，e.g 多个线程更新相同的资源会导致数据不一致</li>
+<li>死锁，e.g 停止等待事件的线程会导致多个线程相互持续等待</li>
+<li>使用太多线程会消耗大量内存</li>
+</ul>
+<h2 id="GCD-的API"><a href="#GCD-的API" class="headerlink" title="GCD 的API"></a>GCD 的API</h2><h3 id="Dispatch-Queue"><a href="#Dispatch-Queue" class="headerlink" title="Dispatch Queue"></a>Dispatch Queue</h3><p>Dispatch Queue 的种类：</p>
+<ul>
+<li>Serial Dispatch Queue            等待现在执行中处理结果</li>
+<li>Concurrent Dispatch Queue  不等待现在执行中的处理结果</li>
+</ul>
+<h3 id="dispatch-queue-create"><a href="#dispatch-queue-create" class="headerlink" title="dispatch_queue_create"></a>dispatch_queue_create</h3><p>创建Dispatch Queue：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_create(“com.exmple.gcd”,DISPATCH_QUEUE_CONCURRENT);</div></pre></td></tr></table></figure></p>
+<p>第一个参数推荐使用App ID这种逆序全程域名，第二个参数是用来确定Queue的种类，填写<strong>NULL就是Serial Dispatch Queue</strong>，<strong>DISPATCH_QUEUE_CONCURRENT是Concurrent Dispatch Queue</strong></p>
+<h3 id="系统标准提供Dispatch-Queue"><a href="#系统标准提供Dispatch-Queue" class="headerlink" title="系统标准提供Dispatch Queue"></a>系统标准提供Dispatch Queue</h3><p>Serial Dispatch Queue </p>
+<ul>
+<li>Main Dispatch Queue 主线程执行<br>获取方式：  <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> mainQueue = dispatch_queue_get_main_queue();</div></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>方案 2： 在 block 外定义一个 <code>__weak</code> 的 引用到 self，并在在 block 内部通过这个弱引用定义一个 <code>__strong</code> 的引用。</p>
-<p>不管 block 是否通过属性被 retain ，这里也不会发生循环引用。如果 block 被传递到其他对象并且被复制了，执行的时候，weakSelf 可能被nil，因为强引用被赋值并且不会变成nil的时候，我们确保对象 在 block 调用的完整周期里面被 retain了，如果抢占发生了，随后的对 strongSelf 的执行会继续并且会产生一样的值。如果 strongSelf 的执行到 nil，那么在 block 不能正确执行前已经返回了。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line">myObj.myBlock =  ^&#123;</div><div class="line">    __<span class="keyword">strong</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) strongSelf = weakSelf;</div><div class="line">    <span class="keyword">if</span> (strongSelf) &#123;</div><div class="line">        [strongSelf doSomething]; <span class="comment">// strongSelf != nil</span></div><div class="line">        <span class="comment">// preemption, strongSelf still not nil（抢占的时候，strongSelf 还是非 nil 的)</span></div><div class="line">        [strongSelf doSomethingElse]; <span class="comment">// strongSelf != nil</span></div><div class="line">    &#125;<span class="keyword">else</span> &#123;</div><div class="line">        <span class="comment">// Probably nothing...</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>小结：<br>方案 1: 当 block 被声明为一个 property 的时候使用。<br>方案 2: 和并发执行有关。当涉及异步的服务的时候，block 可以在之后被执行，并且不会发生关于 self 是否存在的问题</p>
-<h3 id="对象之间的信息传递的🌰"><a href="#对象之间的信息传递的🌰" class="headerlink" title="对象之间的信息传递的🌰"></a>对象之间的信息传递的🌰</h3><p>做了个Demo，在两个ViewController之间进行信息的传递，ViewController中设置个label，展示信息，而NextViewController中的textfield中输入要传递的信息string；</p>
-<p>NextViewController.h<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">void</span>(^PassTextFieldValueBlock)(<span class="built_in">NSString</span> *string)</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">NextViewController</span>:<span class="title">ViewController</span></span></div><div class="line"></div><div class="line"><span class="keyword">@property</span> (<span class="keyword">nonatomic</span>,<span class="keyword">copy</span>) PassTextFieldValueBlock passTextFieldValueBlock;</div><div class="line"></div><div class="line"><span class="keyword">@end</span></div></pre></td></tr></table></figure></p>
-<p>ViewController.m<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-(IBACtion)pushNextViewController:(<span class="built_in">UIButton</span> *)sender&#123;</div><div class="line">    NextViewController *nextVC = [[NextViewController alloc]init];</div><div class="line">    __<span class="keyword">weak</span> <span class="keyword">typeof</span>(<span class="keyword">self</span>) weakSelf = <span class="keyword">self</span>;</div><div class="line">    nextVC.passTextFieldValueBlock = ^(<span class="built_in">NSString</span> *string)&#123;</div><div class="line">        <span class="comment">//call Reset label method;  </span></div><div class="line">    &#125;;</div><div class="line">    [<span class="keyword">self</span>.navigationController pushViewController:nextVC anmiated:Yes]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>具体的实现过程可以参考<a href="https://github.com/J4ckChan/BlockDemo" title="Block Demo" target="_blank" rel="external">BlockDemo</a></p>
+</ul>
+<p>Concurrent Dispatch Queue</p>
+<ul>
+<li>Global Dispatch Queue (High Priority)  执行优先级：高</li>
+<li>Global Dispatch Queue (Default Priority)  执行优先级：默认</li>
+<li>Global Dispatch Queue (Low Priority)  执行优先级：低</li>
+<li>Global Dispatch Queue (Background Priority)  执行优先级：后台<br>获取方式  <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, <span class="number">0</span>);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="dispatch-set-target-queue"><a href="#dispatch-set-target-queue" class="headerlink" title="dispatch_set_target_queue"></a>dispatch_set_target_queue</h3><p>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> serialQueue = dispatch_queue_create(<span class="string">"com.exmple.gcd"</span>, <span class="literal">NULL</span>);</div><div class="line"><span class="built_in">dispatch_queue_t</span> globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, <span class="number">0</span>);</div><div class="line">dispatch_set_target_queue(serialQueue, globalQueue);</div></pre></td></tr></table></figure></p>
+<p>指定要变更执行优先级的Dispatch Queue为dispatch_set_target_queue函数第一个参数，指定与要使用的执行优先级相同优先级的Global Dispatch Queue为第二个参数（目标）。</p>
+<h3 id="dispatch-after"><a href="#dispatch-after" class="headerlink" title="dispatch_after"></a>dispatch_after</h3><p>想在3s后执行处理：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"> dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, <span class="number">3</span>ull*<span class="built_in">NSEC_PER_SEC</span>);</div><div class="line">dispatch_after(time, dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="comment">//code to be executed after a specified delay</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>_第一个参数dispatch_time_t，该值可以用dipatch_time函数或dispatch_walltime函数获取；_<br>⚠️：dispatch_after函数并不是在指定时间后执行处理，而只是在指定时间最佳处理到Dispatch Queue。</p>
+<h3 id="Dispatch-Group"><a href="#Dispatch-Group" class="headerlink" title="Dispatch Group"></a>Dispatch Group</h3><p>🌰：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line">dispatch_group_t group = dispatch_group_create();</div><div class="line"></div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block1"</span>);</div><div class="line">&#125;);</div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block2"</span>);</div><div class="line">&#125;);</div><div class="line">dispatch_group_async(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"block3"</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">dispatch_group_notify(group, queue, ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"done"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-barrier-async"><a href="#dispatch-barrier-async" class="headerlink" title="dispatch_barrier_async"></a>dispatch_barrier_async</h3><p>避免数据竞争：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block0 for reading</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block1 for reading</span></div><div class="line">&#125;);</div><div class="line">dispatch_barrier_async(queue, ^&#123;</div><div class="line"><span class="comment">//block for writing</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block2 for reading</span></div><div class="line">&#125;);</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line"><span class="comment">//block3 for reading</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-apply"><a href="#dispatch-apply" class="headerlink" title="dispatch_apply"></a>dispatch_apply</h3><p>由于dispatch_apply函数也和dispatch_sync函数相同，会等待处理执行结束，因此推荐在dispatch_asyn函数中非同步地执行dispatch_apply函数。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line"></div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">dispatch_apply([array count], queue, ^(size_t index) &#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%zu:%@"</span>,index,[array objectAtIndex:index]);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">dispatch_async</span>(dispatch_get_main_queue(), ^&#123;</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"done"</span>);</div><div class="line">&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="Dispatch-Semaphore"><a href="#Dispatch-Semaphore" class="headerlink" title="Dispatch Semaphore"></a>Dispatch Semaphore</h3><p>虽然使用Serial Dispatch Queue 和 dispatch_barrier_async 函数可以避免数据竞争，但是有必要进行更细粒度的排他控制。</p>
+<p>Dispatch Semaphore是持有计数的信号，该计数是多线程编程中的计数类型信号。计数为0时等待，计数为1或大于1时，减去1而不等待。<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">dispatch_queue_t</span> queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="number">0</span>);</div><div class="line">dispatch_semaphore_t semaphore = dispatch_semaphore_create(<span class="number">1</span>);</div><div class="line"><span class="built_in">NSMutableArray</span> *array = [[<span class="built_in">NSMutableArray</span> alloc]init];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</div><div class="line"><span class="built_in">dispatch_async</span>(queue, ^&#123;</div><div class="line">dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);</div><div class="line">[array addObject:[<span class="built_in">NSNumber</span> numberWithInt:i]];</div><div class="line">dispatch_semaphore_signal(semaphore);</div><div class="line">&#125;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="dispatch-once"><a href="#dispatch-once" class="headerlink" title="dispatch_once"></a>dispatch_once</h3><p>应用在单例模式，在生成单例对象时使用：<br>    <figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</div><div class="line"><span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</div><div class="line"><span class="comment">//code to be executed once</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -455,6 +446,12 @@ block">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/GCD/" rel="tag"># GCD</a>
+          
+        </div>
+      
 
       
         
@@ -464,15 +461,15 @@ block">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/04/01/关于RunLoop的笔记/" rel="next" title="关于RunLoop的笔记">
+                <i class="fa fa-chevron-left"></i> 关于RunLoop的笔记
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/14/NSDate/" rel="prev" title="NSDate">
-                NSDate <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -610,7 +607,7 @@ block">
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Block"><span class="nav-number">1.</span> <span class="nav-text">Block</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础的知识"><span class="nav-number">1.1.</span> <span class="nav-text">基础的知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block的使用"><span class="nav-number">1.2.</span> <span class="nav-text">block的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#block类型的语法结构如下："><span class="nav-number">1.2.1.</span> <span class="nav-text">block类型的语法结构如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为常用的block类型创建typedef"><span class="nav-number">1.2.2.</span> <span class="nav-text">为常用的block类型创建typedef</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#block的retain-cycle"><span class="nav-number">1.2.3.</span> <span class="nav-text">block的retain cycle</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#怎么引起循环引用的呢？"><span class="nav-number">1.2.3.1.</span> <span class="nav-text">怎么引起循环引用的呢？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#避免block方法及差异："><span class="nav-number">1.2.3.2.</span> <span class="nav-text">避免block方法及差异：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象之间的信息传递的🌰"><span class="nav-number">1.2.4.</span> <span class="nav-text">对象之间的信息传递的🌰</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GCD"><span class="nav-number">1.</span> <span class="nav-text">GCD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是GCD"><span class="nav-number">1.1.</span> <span class="nav-text">什么是GCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程编程"><span class="nav-number">1.2.</span> <span class="nav-text">多线程编程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCD-的API"><span class="nav-number">2.</span> <span class="nav-text">GCD 的API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch-Queue"><span class="nav-number">2.1.</span> <span class="nav-text">Dispatch Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-queue-create"><span class="nav-number">2.2.</span> <span class="nav-text">dispatch_queue_create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统标准提供Dispatch-Queue"><span class="nav-number">2.3.</span> <span class="nav-text">系统标准提供Dispatch Queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-set-target-queue"><span class="nav-number">2.4.</span> <span class="nav-text">dispatch_set_target_queue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-after"><span class="nav-number">2.5.</span> <span class="nav-text">dispatch_after</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch-Group"><span class="nav-number">2.6.</span> <span class="nav-text">Dispatch Group</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-barrier-async"><span class="nav-number">2.7.</span> <span class="nav-text">dispatch_barrier_async</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-apply"><span class="nav-number">2.8.</span> <span class="nav-text">dispatch_apply</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dispatch-Semaphore"><span class="nav-number">2.9.</span> <span class="nav-text">Dispatch Semaphore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dispatch-once"><span class="nav-number">2.10.</span> <span class="nav-text">dispatch_once</span></a></li></ol></li></ol></div>
             
 
           </div>
